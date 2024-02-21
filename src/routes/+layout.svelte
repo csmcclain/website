@@ -3,8 +3,6 @@
     let showSidebar = false;
     let innerWidth = 500;
 
-    //$: console.log("innerWidth: " + innerWidth + "showSidebar: " + showSidebar);
-
     function toggleShowSidebar() {
         showSidebar = !showSidebar;
     }
@@ -36,7 +34,7 @@
         <li><a href="mailto:christopher.mcclain@icloud.com">hire me</a></li>
     </ul>
     <ul>
-        <li><a href="/" class="disableHoverColor">Christopher McClain</a></li>
+        <li><a href="/" class="disableHoverColor" style:padding="0">Christopher McClain</a></li>
         <li class="hideOnMobile"><a href="https://www.linkedin.com/in/christopher-mcclain/"><i class="fa-brands fa-linkedin fa-lg" style:color=#0077B5/></a></li>
         <li class="hideOnMobile"><a href="https://github.com/csmcclain"><i class="fa-brands fa-github fa-lg"/></a></li>
         <li><a class="hideOnMobile disableHoverColor" href="mailto:christopher.mcclain@icloud.com"><p class="hireMeButton">hire me</p></a></li>
@@ -44,7 +42,7 @@
     </ul>
 </nav>
 
-<slot />
+    <slot />
 
 <style>
     	:global(*) {
@@ -57,6 +55,7 @@
             background-color: #F1EEE9;
             font-family: "Gentium Plus";
             font-weight: 600;
+            font-size: 14pt;
 		}
 
         i {
@@ -66,6 +65,9 @@
         nav {
             background-color: #F1EEE9;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, .1);
+            width: 100%;
+            padding: 0 200px; 
+            box-sizing: border-box;
         }
 
         nav ul {
@@ -113,7 +115,7 @@
             height: 100vh;
             width: 250px;
             z-index: 999;
-            background-color: rgba(255, 255, 255, .8);
+            background-color: rgba(241, 238, 233, .8);
             backdrop-filter: blur(10px);
             box-shadow: -10px 0px -10px rgba(0, 0, 0, .2);
             flex-direction: column;
@@ -149,11 +151,19 @@
             .menu-button {
                 display: block;
             }
+
+            nav {
+                padding: 0 25px;
+            }
         }
 
         @media(max-width: 400px) {
             .sidebar {
                 width: 100%;
+            }
+
+            nav {
+                padding: 0;
             }
         }
 </style>
