@@ -151,9 +151,10 @@
         }
 
         @media(max-width: 800px) {
-            /* :global(body) {
-                font-size: 24px;
-            } */
+
+            nav {
+                padding: 0 10%;
+            }
 
             .hideOnMobile {
                 display: none;
@@ -176,7 +177,7 @@
             }
 
             nav {
-                padding: 0 1%;
+                padding: 0 5%;
             }
 
         }
