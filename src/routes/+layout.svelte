@@ -68,6 +68,8 @@
             width: 100%;
             padding: 0 20%;
             box-sizing: border-box;
+            position: sticky;
+            top: 0;
         }
 
         nav ul {
