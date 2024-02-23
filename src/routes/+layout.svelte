@@ -32,43 +32,45 @@
 	on:orientationchange={handleOrientationChange}
 />
 
-<nav>
-	<ul class="sidebar" style:display={showSidebar ? 'flex' : 'none'}>
-		<li>
-			<button class="disableHoverColor" on:click={toggleShowSidebar} style:margin-left="auto"
-				><i class="fa-solid fa-x fa-2x" /></button
-			>
-		</li>
-		<li>
-			<a href="https://www.linkedin.com/in/christopher-mcclain/"
-				><i class="fa-brands fa-linkedin fa-2x" style:color="#0077B5" /></a
-			>
-		</li>
-		<li><a href="https://github.com/csmcclain"><i class="fa-brands fa-github fa-2x" /></a></li>
-		<li><a href="mailto:christopher.mcclain@icloud.com" style:font-size="24px">hire me</a></li>
-	</ul>
-	<ul>
-		<li><a href="/" class="disableHoverColor">Christopher McClain</a></li>
-		<li class="hideOnMobile">
-			<a href="https://www.linkedin.com/in/christopher-mcclain/"
-				><i class="fa-brands fa-linkedin fa-lg" style:color="#0077B5" /></a
-			>
-		</li>
-		<li class="hideOnMobile">
-			<a href="https://github.com/csmcclain"><i class="fa-brands fa-github fa-lg" /></a>
-		</li>
-		<li>
-			<a class="hideOnMobile disableHoverColor" href="mailto:christopher.mcclain@icloud.com"
-				><p class="hireMeButton">hire me</p></a
-			>
-		</li>
-		<li class="menu-button">
-			<button on:click={toggleShowSidebar}><i class="fa-solid fa-bars fa-2x" /></button>
-		</li>
-	</ul>
-</nav>
+<div>
+	<nav>
+		<ul class="sidebar" style:display={showSidebar ? 'flex' : 'none'}>
+			<li>
+				<button class="disableHoverColor" on:click={toggleShowSidebar} style:margin-left="auto"
+					><i class="fa-solid fa-x fa-2x" /></button
+				>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/christopher-mcclain/"
+					><i class="fa-brands fa-linkedin fa-2x" style:color="#0077B5" /></a
+				>
+			</li>
+			<li><a href="https://github.com/csmcclain"><i class="fa-brands fa-github fa-2x" /></a></li>
+			<li><a href="mailto:christopher.mcclain@icloud.com" style:font-size="24px">hire me</a></li>
+		</ul>
+		<ul>
+			<li><a href="/" class="disableHoverColor">Christopher McClain</a></li>
+			<li class="hideOnMobile">
+				<a href="https://www.linkedin.com/in/christopher-mcclain/"
+					><i class="fa-brands fa-linkedin fa-lg" style:color="#0077B5" /></a
+				>
+			</li>
+			<li class="hideOnMobile">
+				<a href="https://github.com/csmcclain"><i class="fa-brands fa-github fa-lg" /></a>
+			</li>
+			<li>
+				<a class="hideOnMobile disableHoverColor" href="mailto:christopher.mcclain@icloud.com"
+					><p class="hireMeButton">hire me</p></a
+				>
+			</li>
+			<li class="menu-button">
+				<button on:click={toggleShowSidebar}><i class="fa-solid fa-bars fa-2x" /></button>
+			</li>
+		</ul>
+	</nav>
+</div>
 
-<slot innerWidth />
+<slot />
 
 <style>
 	:global(*) {
@@ -88,18 +90,20 @@
 		margin: 0;
 	}
 
-	nav {
+	div {
 		background-color: #f1eee9;
 		box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 		width: 100%;
-		padding: 0 20%;
-		box-sizing: border-box;
 		position: sticky;
 		top: 0;
 	}
 
+	nav {
+		margin: auto;
+		max-width: 1500px;
+	}
+
 	nav ul {
-		width: 100%;
 		list-style: none;
 		display: flex;
 		justify-content: flex-end;
@@ -179,7 +183,7 @@
 
 	@media (max-width: 800px) {
 		nav {
-			padding: 0 10%;
+			min-width: 250px;
 		}
 
 		.hideOnMobile {
@@ -198,10 +202,6 @@
 
 		.sidebar {
 			width: 100%;
-		}
-
-		nav {
-			padding: 0 5%;
 		}
 	}
 </style>
