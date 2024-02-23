@@ -1,6 +1,6 @@
 <div class="landingBlock">
     <h2 class="landingTitle">Hello! I am Christopher, <br>a software engineer from Utah.</h2>
-    <p>I have researched alternatives to pasword based authentication, automated application deployments into the AWS cloud,
+    <p>I have researched certificate based authentication, automated application deployments into the AWS cloud,
         and written API's for User lifecycle management.</p>
     <p>Now, I write code that protects users the moment they connect to the internet.</p>
     <a href="mailto:christopher.mcclain@icloud.com">christopher.mcclain@icloud.com</a>
