@@ -9,19 +9,21 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="mainContainer" on:mouseenter={toggleHover} on:mouseleave={toggleHover}>
+<button class="mainContainer" on:mouseenter={toggleHover} on:mouseleave={toggleHover}>
 	<img src={featuredWork.backgroundImage} alt={featuredWork.imageAlt} />
 	{#if inHover}
 		<div class="hiddenDescription" transition:fade>
-			<h4>{featuredWork.company}</h4>
-			<p>{featuredWork.title}</p>
+			<h1>{featuredWork.company}</h1>
+			<h3>{featuredWork.title}</h3>
 		</div>
 	{/if}
-</div>
+</button>
 
 <style>
 	.mainContainer {
+		text-decoration: none;
+		border: none;
+		text-align: left;
 		background-color: #d0d0d0;
 		width: 700px;
 		max-height: 400px;
