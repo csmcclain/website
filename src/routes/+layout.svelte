@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { slide } from 'svelte/transition';
 	import '@fortawesome/fontawesome-free/css/all.min.css';
 	let showSidebar = false;
 	let innerWidth = 500;
@@ -34,20 +35,22 @@
 
 <div>
 	<nav>
-		<ul class="sidebar" style:display={showSidebar ? 'flex' : 'none'}>
-			<li>
-				<button class="disableHoverColor" on:click={toggleShowSidebar} style:margin-left="auto"
-					><i class="fa-solid fa-x fa-2x" /></button
-				>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/christopher-mcclain/"
-					><i class="fa-brands fa-linkedin fa-2x" style:color="#0077B5" /></a
-				>
-			</li>
-			<li><a href="https://github.com/csmcclain"><i class="fa-brands fa-github fa-2x" /></a></li>
-			<li><a href="mailto:christopher.mcclain@icloud.com" style:font-size="24px">hire me</a></li>
-		</ul>
+		{#if showSidebar}
+			<ul class="sidebar" transition:slide={{ delay: 0, axis: 'x' }}>
+				<li>
+					<button class="disableHoverColor" on:click={toggleShowSidebar} style:margin-left="auto"
+						><i class="fa-solid fa-x fa-2x" /></button
+					>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/christopher-mcclain/"
+						><i class="fa-brands fa-linkedin fa-2x" style:color="#0077B5" /></a
+					>
+				</li>
+				<li><a href="https://github.com/csmcclain"><i class="fa-brands fa-github fa-2x" /></a></li>
+				<li><a href="mailto:christopher.mcclain@icloud.com" style:font-size="24px">hire me</a></li>
+			</ul>
+		{/if}
 		<ul>
 			<li><a href="/" class="disableHoverColor">Christopher McClain</a></li>
 			<li class="hideOnMobile">
@@ -154,6 +157,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: flex-start;
+		display: flex;
 	}
 
 	.sidebar li {

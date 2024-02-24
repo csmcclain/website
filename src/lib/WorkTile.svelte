@@ -1,14 +1,23 @@
 <script lang="ts">
 	import type { FeaturedWork } from '$lib/featuredWork';
+	import { fade } from 'svelte/transition';
 	export let featuredWork: FeaturedWork;
+	let inHover = false;
+
+	function toggleHover() {
+		inHover = !inHover;
+	}
 </script>
 
-<div class="mainContainer">
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div class="mainContainer" on:mouseenter={toggleHover} on:mouseleave={toggleHover}>
 	<img src={featuredWork.backgroundImage} alt={featuredWork.imageAlt} />
-	<div class="hiddenDescription">
-		<h4>{featuredWork.company}</h4>
-		<p>{featuredWork.title}</p>
-	</div>
+	{#if inHover}
+		<div class="hiddenDescription" transition:fade>
+			<h4>{featuredWork.company}</h4>
+			<p>{featuredWork.title}</p>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -32,18 +41,13 @@
 		position: absolute;
 		top: 0px;
 		left: 0px;
-		transition: all 400ms ease;
 		z-index: 100;
 		box-sizing: border-box;
-		opacity: 0;
+		opacity: 0.8;
 		background-color: #ec994b;
 		width: 100%;
 		height: 100%;
-		padding: 10px;
-	}
-
-	.mainContainer:hover .hiddenDescription {
-		opacity: 0.8;
+		padding: 5px 15px;
 	}
 
 	@media (max-width: 600px) {
