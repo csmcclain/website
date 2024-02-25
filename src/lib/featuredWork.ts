@@ -10,10 +10,10 @@ export const works: FeaturedWork[] = [
     {
         company: "Opentext (formerly Microfocus)",
         title: "Arcsight Enterprise Security Manager",
-        description: `I currently work at Opentext (formerly Microfocus) on the Arcsight Enterprise Securiity Manager (ESM). \
+        description: `I currently work at Opentext (formerly Micro Focus) on the Arcsight Enterprise Security Manager (ESM). \
 I wrote and maintain the SCIM api that other applications can use to provision users into ESM. \
 Additionally, I wrote and maintain terraform code to deploy ESM into the AWS cloud. \
-Most renectly I am working on mvoing ESM from a monolithic application to a distributed set of Kubernetes pods.`,
+Most recently I am working on moving ESM from a monolithic application to a distributed set of Kubernetes pods.`,
         backgroundImage: "ArcsightESM.png",
         imageAlt: "Arcsight Enterprise Security Manager",
     },
