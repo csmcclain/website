@@ -68,4 +68,10 @@
 			width: auto;
 		}
 	}
+
+	@media (max-width: 400px) {
+		.landingBlock {
+			padding-top: 20px;
+		}
+	}
 </style>

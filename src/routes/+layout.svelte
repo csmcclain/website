@@ -199,7 +199,7 @@
 		}
 	}
 
-	@media (max-width: 400px) {
+	@media (max-width: 500px) {
 		:global(body) {
 			font-size: 18px;
 		}
